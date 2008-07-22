@@ -23,7 +23,6 @@ var Accordion = Class.create({
 	showAccordion : null,
 	currentAccordion : null,
 	duration : null,
-	effects : [],
 	animating : false,
 	
 	//  
@@ -43,138 +42,60 @@ var Accordion = Class.create({
 				content : 'accordion_content'
 			},
 			defaultSize : {
-				height : null,
+				height : 30,
 				width : null
 			},
-			direction : 'vertical',
 			onEvent : 'click'
 		}, options || {});
-		this.duration = ((11-this.options.resizeSpeed)*0.15);
 		
-		if (this.options.direction == 'horizontal') {
-			this.scaling = $H({
-				scaleX: true,
-				scaleY: false,
-				sync: true,
-				scaleContent: true,
-				transition: Effect.Transitions.sinoidal,
-				duration: this.duration,
-				restoreAfterFinish: true,
-			});
-		} else {
-			this.scaling = $H({
-				scaleX: false,
-				scaleY: true,
-				sync: true,
-				scaleContent: true,
-				transition: Effect.Transitions.sinoidal,
-				duration: this.duration,
-				restoreAfterFinish: true,
-			});			
-		}
+    this.duration = ((11-this.options.resizeSpeed)*0.15)
 
 		this.accordions = this.container.select(this.options.classNames.toggle); 
-		
+		this.heights = $H(); 
 		this.accordions.each(function(accordion) {
 			accordion.observe(this.options.onEvent, this.activate.bindAsEventListener(this, accordion));
-			if (this.options.direction == 'horizontal') {
-				var options = $H({width: '0px'});
-			} else {
-				var options = $H({height: '0px'});			
-			}	
-			accordion.next(0).setStyle(options).hide();			
-		}.bind(this));
-		
-	},
-	
-	//
-	//  Activate an accordion
-	//
-	activate : function(ev, accordion) {
-		if (this.animating) {
-			return false;
-		}
-		ev.stop();
-		
-		this.effects = [];
-	
-		this.currentAccordion = $(accordion.next(0));
-		this.currentAccordion.setStyle({
-			display: 'block'
-		});		
-		
-		this.currentAccordion.previous(0).addClassName(this.options.classNames.toggleActive);
+			accordion.identify();			
+			this.heights.set(accordion.id, accordion.next(0).scrollHeight)
+			accordion.next(0).hide();
 			
-		if (this.currentAccordion == this.showAccordion) {
-		  this.deactivate();
-		} else {
-		  this._handleAccordion();
-		}
+		}.bind(this));
+		this.previous = null;
+		this.current = this.accordions[0];
+		this.handleEffect();
 	},
-	// 
-	// Deactivate an active accordion
-	//
-	deactivate : function() {
-		options = $H({
-			queue: {
-				position: 'end', 
-				scope: 'accordionAnimation'
-			},
-			scaleMode: { 
-				originalHeight: this.options.defaultSize.height ? this.options.defaultSize.height : this.currentAccordion.scrollHeight,
-				originalWidth: this.options.defaultSize.width ? this.options.defaultSize.width : this.currentAccordion.scrollWidth
-			},
-			afterFinish: function() {
-				this.showAccordion.setStyle({height: 'auto', display: 'none'});				
-				this.showAccordion = null;
-				this.animating = false;
-			}.bind(this)
-		}).merge(this.scaling);    
-		
-		this.showAccordion.previous(0).removeClassName(this.options.classNames.toggleActive);
-		new Effect.SlideDown(this.showAccordion, 0, options);
+	
+	activate: function(ev, accordion){
+	    ev.stop();
+	    this.previous = this.current;
+	    this.current = accordion;
+	    this.handleEffect();
 	},
-
-  //
-  // Handle the open/close actions of the accordion
-  //
-	_handleAccordion : function() {
-		options = $H({
-			scaleMode: { 
-				originalHeight: this.options.defaultSize.height ? this.options.defaultSize.height : this.currentAccordion.scrollHeight,
-				originalWidth: this.options.defaultSize.width ? this.options.defaultSize.width : this.currentAccordion.scrollWidth
-			}
-		}).merge(this.scaling);
-		
-		this.effects.push(new Effect.SlideUp(this.currentAccordion, 100, options));
-
-		if (this.showAccordion) {
-			this.showAccordion.previous(0).removeClassName(this.options.classNames.toggleActive);
-			this.effects.push(new Effect.SlideDown(this.showAccordion, 0, this.scaling));				
-		}
-		
-		new Effect.Parallel(this.effects, {
-			duration: this.duration, 
-			queue: {
-				position: 'end', 
-				scope: 'accordionAnimation'
-			},
-			beforeStart: function() {
-				this.animating = true;
-			}.bind(this),
-			afterFinish: function() {
-				if (this.showAccordion) {
-					this.showAccordion.setStyle({
-						display: 'none'
-					});				
-				}
-				$(this.currentAccordion).setStyle({
-				  height: 'auto'
-				});
-				this.showAccordion = this.currentAccordion;
-				this.animating = false;
-			}.bind(this)
-		});
-	}
+	
+	handleEffect: function(){
+	    effects = $A();
+	    if (this.previous){ //scale previous down  
+	      effects.push(new Effect.Scale(this.previous.next(0), 0, {sync: true, scaleContent: false, 
+	                                      afterFinish: function(){this.previous.next(0).hide();}.bind(this),
+    	                                  scaleX: false,
+    	                                  transition: Effect.Transitions.sinoidal,
+    	                                  duration: this.duration}));
+	      
+	    }
+	    
+	    if (this.current){ //scale current up now
+	      effects.push(new Effect.Scale(this.current.next(0), 100, {sync: true, scaleContent: false, 
+	                                      afterFinish: function(){this.current.next(0).show();}.bind(this),
+    	                                  scaleX: false,
+    	                                  scaleFrom: 0,
+    	                                  scaleMode:{originalHeight: this.heights.get(this.current.id),
+    	                                  transition: Effect.Transitions.sinoidal,
+    	                                  duration: this.duration}}));
+	    }
+	    this.startEffect(effects);
+	},
+	
+	startEffect: function(effects){
+  	  new Effect.Parallel(effects, {duration: this.duration});
+	},
 });
 	

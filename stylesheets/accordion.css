@@ -1,0 +1,1457 @@
+/*
+	Vertical Accordions
+*/
+
+.accordion_toggle {
+	display: block;
+	height: 30px;
+	width: 680px;
+	background: url(images/accordion_toggle.jpg) no-repeat top right #a9d06a;
+	padding: 0 10px 0 10px;
+	line-height: 30px;
+	color: #ffffff;
+	font-weight: normal;
+	text-decoration: none;
+	outline: none;
+	font-size: 12px;
+	color: #000000;
+	border-bottom: 1px solid #cde99f;
+	cursor: pointer;
+	margin: 0 0 0 0;
+}
+
+.accordion_toggle_active {
+	background: url(images/accordion_toggle_active.jpg) no-repeat top right #e0542f;
+	color: #ffffff;
+	border-bottom: 1px solid #f68263;
+}
+
+.accordion_content {
+	background-color: #ffffff;
+	color: #444444;
+	overflow: hidden;
+}
+	
+	.accordion_content h2 {
+		margin: 15px 0 5px 10px;
+		color: #0099FF;
+	}
+	
+	.accordion_content p {
+		line-height: 150%;
+		padding: 5px 10px 15px 10px;
+	}
+	
+.vertical_accordion_toggle {
+	display: block;
+	height: 30px;
+	width: 600px;
+	background: url(images/accordion_toggle.jpg) no-repeat top right #a9d06a;
+	padding: 0 10px 0 10px;
+	line-height: 30px;
+	color: #ffffff;
+	font-weight: normal;
+	text-decoration: none;
+	outline: none;
+	font-size: 12px;
+	color: #000000;
+	border-bottom: 1px solid #cde99f;
+	cursor: pointer;
+	margin: 0 0 0 0;
+}
+
+.vertical_accordion_toggle_active {
+	background: url(images/accordion_toggle_active.jpg) no-repeat top right #e0542f;
+	color: #ffffff;
+	border-bottom: 1px solid #f68263;
+}
+
+.vertical_accordion_content {
+	background-color: #ffffff;
+	color: #444444;
+	overflow: hidden;
+}
+
+	.vertical_accordion_content h2 {
+		margin: 15px 0 5px 10px;
+		color: #0099FF;
+	}
+
+	.vertical_accordion_content p {
+		line-height: 150%;
+		padding: 5px 10px 15px 10px;
+	}
+		
+/*
+	Horizontal Accordion
+*/
+
+.horizontal_accordion_toggle {
+	/* REQUIRED */
+	float: left;	/* This make sure it stays horizontal */
+	/* REQUIRED */
+
+	display: block;
+	height: 100px;
+	width: 30px;
+	background: url(images/h_accordion_toggle.jpg) no-repeat top left #a9d06a;
+	color: #ffffff;
+	text-decoration: none;
+	outline: none;
+	border-right: 1px solid #cde99f;
+	cursor: pointer;
+	margin: 0 0 0 0;
+}
+
+.horizontal_accordion_toggle_active {
+	background: url(images/h_accordion_toggle_active.jpg) no-repeat top left #e0542f;
+	border-right: 1px solid #f68263;
+}
+
+.horizontal_accordion_content {
+	/* REQUIRED */
+	height: 100px;	/* We need to define a height for the accordion as it stretches the width */
+	float: left;	/* This make sure it stays horizontal */
+	/* REQUIRED */
+	
+	overflow: hidden;
+	background-color: #ffffff;
+	color: #444444;
+}
+	
+	.horizontal_accordion_content p {
+		width: 450px;
+		line-height: 150%;
+		padding: 5px 10px 15px 10px;
+	}
+			
+			
+/* Container styling*/
+#horizontal_container {
+  margin: 20px auto 20px auto;
+  width: 680px;   
+  height: 100px;    
+}
+
+#vertical_nested_container {
+  margin: 20px auto 20px auto;
+  width: 620px;
+}
+Firebug's log limit has been reached. %S entries not shown.		Preferences	 
+Firebug's log limit has been reached. %S entries not shown.		Preferences	 
+Firebug's log limit has been reached. %S entries not shown.		Preferences	 
+Firebug's log limit has been reached. %S entries not shown.		Preferences	 
+Object options=Object duration=0.44999999999999996
+Firebug's log limit has been reached. %S entries not shown.		Preferences	 
+Firebug's log limit has been reached. %S entries not shown.		Preferences	 
+1<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+2<html xmlns="http://www.w3.org/1999/xhtml">
+3<head>
+4 <meta http-equiv="Content-Type" content="text/html" charset="iso-8859-1" />
+5 <script src="/javascripts/prototype.js?1207482883" type="text/javascript"></script>
+6<script src="/javascripts/effects.js?1207482883" type="text/javascript"></script>
+7<script src="/javascripts/dragdrop.js?1209507348" type="text/javascript"></script>
+8<script src="/javascripts/controls.js?1207482883" type="text/javascript"></script>
+9<script src="/javascripts/behavior.js?1207482883" type="text/javascript"></script>
+10<script src="/javascripts/accordion.js?1190155470" type="text/javascript"></script>
+11<script src="/javascripts/application.js?1216674994" type="text/javascript"></script>
+12 <script src="/javascripts/tablekit.js?1213819637" type="text/javascript"></script>
+13<script src="/javascripts/starbox.js?1216675665" type="text/javascript"></script>
+14<script src="/javascripts/prototype-date-extensions.js?1210711707" type="text/javascript"></script>
+15<script src="/javascripts/datepicker.js?1214756660" type="text/javascript"></script>
+16<script src="/javascripts/listkit.js?1213819637" type="text/javascript"></script>
+17 <link href="/stylesheets/blueprint/screen.css?1207482883" media="screen" rel="stylesheet" type="text/css" />
+18<link href="/stylesheets/datepicker.css?1210711707" media="screen" rel="stylesheet" type="text/css" />
+19<link href="/stylesheets/application.css?1215719800" media="screen" rel="stylesheet" type="text/css" />
+20<link href="/stylesheets/tablekit.css?1207482883" media="screen" rel="stylesheet" type="text/css" />
+21<link href="/stylesheets/starbox.css?1216675665" media="screen" rel="stylesheet" type="text/css" />
+22
+23 <link href="/stylesheets/calendar/big/style.css?1208380006" media="screen" rel="stylesheet" type="text/css" />
+24
+25 <title>LudoManager</title>
+26</head>
+27<body>
+28<div class="container">
+29 <div id="header" class="column span-24">
+30 <ul>
+31 <li class=" left"><a href="/games">Les Jeux</a></li>
+32 <li class=" left"><a href="/authors">Les Auteurs</a></li>
+33
+34 <li class=" left"><a href="/dashboard">Dashboard</a></li>
+35 <li class=" left"><a href="/account_games">Ma ludotheque</a></li>
+36 <li class="active left">Mes parties</li>
+37 <li class=" right"><a href="/logout">Deconnexion : Ludotiens</a></li>
+38
+39 </ul>
+40 </div>
+41 <div id="sub-nav" class="column span-24">
+42 <ul class="clear">
+43
+44 <li class="left"><a href="/parties">Overview</a></li>
+45<li class="left"><a href="/parties/resume">Par Mois</a></li>
+46
+47
+48 </ul>
+49 </div>
+50
+51 <div class="column span-17 parties" id="content">
+52
+53
+54<h3>Vos parties de Juillet 2008</h3>
+55
+56<table class="calendar" border="0" cellspacing="0" cellpadding="0"><thead><tr><th colspan="2"><a href="/parties/resume/6/2008" class="left">Precedent</a></th><th colspan="3" class="monthName">Juillet</th><th colspan="2"><a href="/parties/resume/8/2008" class="right">Suivant</a></th></tr><tr class="dayName"><th scope='col'>Lundi</th><th scope='col'>Mardi</th><th scope='col'>Mercredi</th><th scope='col'>Jeudi</th><th scope='col'>Vendredi</th><th scope='col'>Samedi</th><th scope='col'>Dimanche</th></tr></thead><tbody><tr><td class="otherMonth">30</td><td class="day" id="day_1"><a class="right play" href="#" onclick="new Ajax.Request('/parties/new?day=1&amp;month=7&amp;year=2008', {asynchronous:true, evalScripts:true, method:'get'}); return false;">jouer</a>
+57<span class="mday">1</span>
+58
+59</td><td class="day" id="day_2"><a class="right play" href="#" onclick="new Ajax.Request('/parties/new?day=2&amp;month=7&amp;year=2008', {asynchronous:true, evalScripts:true, method:'get'}); return false;">jouer</a>
+60<span class="mday">2</span>
+61
+62</td><td class="day" id="day_3"><a class="right play" href="#" onclick="new Ajax.Request('/parties/new?day=3&amp;month=7&amp;year=2008', {asynchronous:true, evalScripts:true, method:'get'}); return false;">jouer</a>
+63<span class="mday">3</span>
+64
+65</td><td class="day" id="day_4"><a class="right play" href="#" onclick="new Ajax.Request('/parties/new?day=4&amp;month=7&amp;year=2008', {asynchronous:true, evalScripts:true, method:'get'}); return false;">jouer</a>
+66<span class="mday">4</span>
+67
+68 <ul>
+69
+70 <li><a href="/games/304" class="color green bzoom">Medici</a></li>
+71
+72 <li><a href="/games/303" class="color green bzoom">L'age de ...</a></li>
+73
+74
+75 </ul>
+76
+77
+78</td><td class="day weekendDay" id="day_5"><a class="right play" href="#" onclick="new Ajax.Request('/parties/new?day=5&amp;month=7&amp;year=2008', {asynchronous:true, evalScripts:true, method:'get'}); return false;">jouer</a>
+79<span class="mday">5</span>
+80
+81</td><td class="day weekendDay" id="day_6"><a class="right play" href="#" onclick="new Ajax.Request('/parties/new?day=6&amp;month=7&amp;year=2008', {asynchronous:true, evalScripts:true, method:'get'}); return false;">jouer</a>
+82<span class="mday">6</span>
+83
+84</td></tr><tr><td class="day" id="day_7"><a class="right play" href="#" onclick="new Ajax.Request('/parties/new?day=7&amp;month=7&amp;year=2008', {asynchronous:true, evalScripts:true, method:'get'}); return false;">jouer</a>
+85<span class="mday">7</span>
+86
+87</td><td class="day" id="day_8"><a class="right play" href="#" onclick="new Ajax.Request('/parties/new?day=8&amp;month=7&amp;year=2008', {asynchronous:true, evalScripts:true, method:'get'}); return false;">jouer</a>
+88<span class="mday">8</span>
+89
+90</td><td class="day" id="day_9"><a class="right play" href="#" onclick="new Ajax.Request('/parties/new?day=9&amp;month=7&amp;year=2008', {asynchronous:true, evalScripts:true, method:'get'}); return false;">jouer</a>
+91<span class="mday">9</span>
+92
+93</td><td class="day" id="day_10"><a class="right play" href="#" onclick="new Ajax.Request('/parties/new?day=10&amp;month=7&amp;year=2008', {asynchronous:true, evalScripts:true, method:'get'}); return false;">jouer</a>
+94<span class="mday">10</span>
+95
+96</td><td class="day" id="day_11"><a class="right play" href="#" onclick="new Ajax.Request('/parties/new?day=11&amp;month=7&amp;year=2008', {asynchronous:true, evalScripts:true, method:'get'}); return false;">jouer</a>
+97<span class="mday">11</span>
+98
+99</td><td class="day weekendDay" id="day_12"><a class="right play" href="#" onclick="new Ajax.Request('/parties/new?day=12&amp;month=7&amp;year=2008', {asynchronous:true, evalScripts:true, method:'get'}); return false;">jouer</a>
+100<span class="mday">12</span>
+101
+102</td><td class="day weekendDay" id="day_13"><a class="right play" href="#" onclick="new Ajax.Request('/parties/new?day=13&amp;month=7&amp;year=2008', {asynchronous:true, evalScripts:true, method:'get'}); return false;">jouer</a>
+103<span class="mday">13</span>
+104
+105</td></tr><tr><td class="day" id="day_14"><a class="right play" href="#" onclick="new Ajax.Request('/parties/new?day=14&amp;month=7&amp;year=2008', {asynchronous:true, evalScripts:true, method:'get'}); return false;">jouer</a>
+106<span class="mday">14</span>
+107
+108</td><td class="day" id="day_15"><a class="right play" href="#" onclick="new Ajax.Request('/parties/new?day=15&amp;month=7&amp;year=2008', {asynchronous:true, evalScripts:true, method:'get'}); return false;">jouer</a>
+109<span class="mday">15</span>
+110
+111</td><td class="day" id="day_16"><a class="right play" href="#" onclick="new Ajax.Request('/parties/new?day=16&amp;month=7&amp;year=2008', {asynchronous:true, evalScripts:true, method:'get'}); return false;">jouer</a>
+112<span class="mday">16</span>
+113
+114</td><td class="day" id="day_17"><a class="right play" href="#" onclick="new Ajax.Request('/parties/new?day=17&amp;month=7&amp;year=2008', {asynchronous:true, evalScripts:true, method:'get'}); return false;">jouer</a>
+115<span class="mday">17</span>
+116
+117</td><td class="day" id="day_18"><a class="right play" href="#" onclick="new Ajax.Request('/parties/new?day=18&amp;month=7&amp;year=2008', {asynchronous:true, evalScripts:true, method:'get'}); return false;">jouer</a>
+118<span class="mday">18</span>
+119
+120</td><td class="day weekendDay" id="day_19"><a class="right play" href="#" onclick="new Ajax.Request('/parties/new?day=19&amp;month=7&amp;year=2008', {asynchronous:true, evalScripts:true, method:'get'}); return false;">jouer</a>
+121<span class="mday">19</span>
+122
+123</td><td class="day weekendDay" id="day_20"><a class="right play" href="#" onclick="new Ajax.Request('/parties/new?day=20&amp;month=7&amp;year=2008', {asynchronous:true, evalScripts:true, method:'get'}); return false;">jouer</a>
+124<span class="mday">20</span>
+125
+126</td></tr><tr><td class="day" id="day_21"><a class="right play" href="#" onclick="new Ajax.Request('/parties/new?day=21&amp;month=7&amp;year=2008', {asynchronous:true, evalScripts:true, method:'get'}); return false;">jouer</a>
+127<span class="mday">21</span>
+128
+129</td><td class="day today" id="day_22"><a class="right play" href="#" onclick="new Ajax.Request('/parties/new?day=22&amp;month=7&amp;year=2008', {asynchronous:true, evalScripts:true, method:'get'}); return false;">jouer</a>
+130<span class="mday">22</span>
+131
+132</td><td class="day" id="day_23"><a class="right play" href="#" onclick="new Ajax.Request('/parties/new?day=23&amp;month=7&amp;year=2008', {asynchronous:true, evalScripts:true, method:'get'}); return false;">jouer</a>
+133<span class="mday">23</span>
+134
+135</td><td class="day" id="day_24"><a class="right play" href="#" onclick="new Ajax.Request('/parties/new?day=24&amp;month=7&amp;year=2008', {asynchronous:true, evalScripts:true, method:'get'}); return false;">jouer</a>
+136<span class="mday">24</span>
+137
+138</td><td class="day" id="day_25"><a class="right play" href="#" onclick="new Ajax.Request('/parties/new?day=25&amp;month=7&amp;year=2008', {asynchronous:true, evalScripts:true, method:'get'}); return false;">jouer</a>
+139<span class="mday">25</span>
+140
+141</td><td class="day weekendDay" id="day_26"><a class="right play" href="#" onclick="new Ajax.Request('/parties/new?day=26&amp;month=7&amp;year=2008', {asynchronous:true, evalScripts:true, method:'get'}); return false;">jouer</a>
+142<span class="mday">26</span>
+143
+144</td><td class="day weekendDay" id="day_27"><a class="right play" href="#" onclick="new Ajax.Request('/parties/new?day=27&amp;month=7&amp;year=2008', {asynchronous:true, evalScripts:true, method:'get'}); return false;">jouer</a>
+145<span class="mday">27</span>
+146
+147</td></tr><tr><td class="day" id="day_28"><a class="right play" href="#" onclick="new Ajax.Request('/parties/new?day=28&amp;month=7&amp;year=2008', {asynchronous:true, evalScripts:true, method:'get'}); return false;">jouer</a>
+148<span class="mday">28</span>
+149
+150</td><td class="day" id="day_29"><a class="right play" href="#" onclick="new Ajax.Request('/parties/new?day=29&amp;month=7&amp;year=2008', {asynchronous:true, evalScripts:true, method:'get'}); return false;">jouer</a>
+151<span class="mday">29</span>
+152
+153</td><td class="day" id="day_30"><a class="right play" href="#" onclick="new Ajax.Request('/parties/new?day=30&amp;month=7&amp;year=2008', {asynchronous:true, evalScripts:true, method:'get'}); return false;">jouer</a>
+154<span class="mday">30</span>
+155
+156</td><td class="day" id="day_31"><a class="right play" href="#" onclick="new Ajax.Request('/parties/new?day=31&amp;month=7&amp;year=2008', {asynchronous:true, evalScripts:true, method:'get'}); return false;">jouer</a>
+157<span class="mday">31</span>
+158
+159</td><td class="otherMonth">1</td><td class="otherMonth weekendDay">2</td><td class="otherMonth weekendDay">3</td></tr></tbody></table>
+160
+161
+162
+163
+164
+165
+166 </div>
+167
+168 <div class="column last span-7" id="innernews">
+169
+170 <div id="placeholder-1">
+171 <div class="widget">
+172 <h3>Statistiques Juillet 2008</h3>
+173 <div class="w-content">
+174
+175 Vous avez jouez en tout 2 parties.
+176 <form action="/parties/resume" method="post">
+177 <ul>
+178 <li class="green"><span class="right">2</span><input checked="checked" id="legend_own" name="legend[own]" type="checkbox" value="1" /><input name="legend[own]" type="hidden" value="0" /> Jeux de votre ludotheque</li>
+179 <li class="orange"><span class="right">0</span><input checked="checked" id="legend_other" name="legend[other]" type="checkbox" value="1" /><input name="legend[other]" type="hidden" value="0" /> Autre jeux</li>
+180 </ul>
+181 </form>
+182
+183 </div>
+184</div>
+185 </div>
+186 <div id="placeholder-2">
+187 </div>
+188 <div id="placeholder-3">
+189 <div class="widget">
+190 <h3>Les jeux du mois</h3>
+191 <div class="w-content">
+192
+193 <table class="sortable">
+194 <tbody>
+195
+196 <tr>
+197 <td><span class="ss_sprite ss_star">&nbsp;</span></span></td>
+198 <td><img alt="9512_0" height="35" src="/game_photos/167/9512_0.jpg?1215245062" width="35" /></td>
+199 <td><a href="/games/303">L'age de pierre</a></td>
+200 <td>1</td>
+201 </tr>
+202
+203 <tr>
+204 <td><span class="ss_sprite ss_star">&nbsp;</span></span></td>
+205 <td><img alt="4834_1" height="35" src="/game_photos/168/4834_1.jpg?1215245208" width="35" /></td>
+206 <td><a href="/games/304">Medici</a></td>
+207 <td>1</td>
+208 </tr>
+209
+210 </tbody>
+211 </table>
+212
+213
+214 </div>
+215</div>
+216 </div>
+217
+218
+219
+220
+221
+222 </div>
+223
+224 <div class="column span-24" id="footer">
+225 <span>Designed by DjT@l</span>
+226 </div>
+227</div> <!-- end main page -->
+228</body>
+229</html>
+230
+1<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+2<html xmlns="http://www.w3.org/1999/xhtml">
+3<head>
+4 <meta http-equiv="Content-Type" content="text/html" charset="iso-8859-1" />
+5 <script src="/javascripts/prototype.js?1207482883" type="text/javascript"></script>
+6<script src="/javascripts/effects.js?1207482883" type="text/javascript"></script>
+7<script src="/javascripts/dragdrop.js?1209507348" type="text/javascript"></script>
+8<script src="/javascripts/controls.js?1207482883" type="text/javascript"></script>
+9<script src="/javascripts/behavior.js?1207482883" type="text/javascript"></script>
+10<script src="/javascripts/accordion.js?1190155470" type="text/javascript"></script>
+11<script src="/javascripts/application.js?1216674994" type="text/javascript"></script>
+12 <script src="/javascripts/tablekit.js?1213819637" type="text/javascript"></script>
+13<script src="/javascripts/starbox.js?1216675665" type="text/javascript"></script>
+14<script src="/javascripts/prototype-date-extensions.js?1210711707" type="text/javascript"></script>
+15<script src="/javascripts/datepicker.js?1214756660" type="text/javascript"></script>
+16<script src="/javascripts/listkit.js?1213819637" type="text/javascript"></script>
+17 <link href="/stylesheets/blueprint/screen.css?1207482883" media="screen" rel="stylesheet" type="text/css" />
+18<link href="/stylesheets/datepicker.css?1210711707" media="screen" rel="stylesheet" type="text/css" />
+19<link href="/stylesheets/application.css?1215719800" media="screen" rel="stylesheet" type="text/css" />
+20<link href="/stylesheets/tablekit.css?1207482883" media="screen" rel="stylesheet" type="text/css" />
+21<link href="/stylesheets/starbox.css?1216675665" media="screen" rel="stylesheet" type="text/css" />
+22
+23 <link href="/stylesheets/calendar/big/style.css?1208380006" media="screen" rel="stylesheet" type="text/css" />
+24
+25 <title>LudoManager</title>
+26</head>
+27<body>
+28<div class="container">
+29 <div id="header" class="column span-24">
+30 <ul>
+31 <li class=" left"><a href="/games">Les Jeux</a></li>
+32 <li class=" left"><a href="/authors">Les Auteurs</a></li>
+33
+34 <li class=" left"><a href="/dashboard">Dashboard</a></li>
+35 <li class=" left"><a href="/account_games">Ma ludotheque</a></li>
+36 <li class="active left">Mes parties</li>
+37 <li class=" right"><a href="/logout">Deconnexion : Ludotiens</a></li>
+38
+39 </ul>
+40 </div>
+41 <div id="sub-nav" class="column span-24">
+42 <ul class="clear">
+43
+44 <li class="left"><a href="/parties">Overview</a></li>
+45<li class="left"><a href="/parties/resume">Par Mois</a></li>
+46
+47
+48 </ul>
+49 </div>
+50
+51 <div class="column span-17 parties" id="content">
+52
+53
+54<h3>Vos parties de Juillet 2008</h3>
+55
+56<table class="calendar" border="0" cellspacing="0" cellpadding="0"><thead><tr><th colspan="2"><a href="/parties/resume/6/2008" class="left">Precedent</a></th><th colspan="3" class="monthName">Juillet</th><th colspan="2"><a href="/parties/resume/8/2008" class="right">Suivant</a></th></tr><tr class="dayName"><th scope='col'>Lundi</th><th scope='col'>Mardi</th><th scope='col'>Mercredi</th><th scope='col'>Jeudi</th><th scope='col'>Vendredi</th><th scope='col'>Samedi</th><th scope='col'>Dimanche</th></tr></thead><tbody><tr><td class="otherMonth">30</td><td class="day" id="day_1"><a class="right play" href="#" onclick="new Ajax.Request('/parties/new?day=1&amp;month=7&amp;year=2008', {asynchronous:true, evalScripts:true, method:'get'}); return false;">jouer</a>
+57<span class="mday">1</span>
+58
+59</td><td class="day" id="day_2"><a class="right play" href="#" onclick="new Ajax.Request('/parties/new?day=2&amp;month=7&amp;year=2008', {asynchronous:true, evalScripts:true, method:'get'}); return false;">jouer</a>
+60<span class="mday">2</span>
+61
+62</td><td class="day" id="day_3"><a class="right play" href="#" onclick="new Ajax.Request('/parties/new?day=3&amp;month=7&amp;year=2008', {asynchronous:true, evalScripts:true, method:'get'}); return false;">jouer</a>
+63<span class="mday">3</span>
+64
+65</td><td class="day" id="day_4"><a class="right play" href="#" onclick="new Ajax.Request('/parties/new?day=4&amp;month=7&amp;year=2008', {asynchronous:true, evalScripts:true, method:'get'}); return false;">jouer</a>
+66<span class="mday">4</span>
+67
+68 <ul>
+69
+70 <li><a href="/games/304" class="color green bzoom">Medici</a></li>
+71
+72 <li><a href="/games/303" class="color green bzoom">L'age de ...</a></li>
+73
+74
+75 </ul>
+76
+77
+78</td><td class="day weekendDay" id="day_5"><a class="right play" href="#" onclick="new Ajax.Request('/parties/new?day=5&amp;month=7&amp;year=2008', {asynchronous:true, evalScripts:true, method:'get'}); return false;">jouer</a>
+79<span class="mday">5</span>
+80
+81</td><td class="day weekendDay" id="day_6"><a class="right play" href="#" onclick="new Ajax.Request('/parties/new?day=6&amp;month=7&amp;year=2008', {asynchronous:true, evalScripts:true, method:'get'}); return false;">jouer</a>
+82<span class="mday">6</span>
+83
+84</td></tr><tr><td class="day" id="day_7"><a class="right play" href="#" onclick="new Ajax.Request('/parties/new?day=7&amp;month=7&amp;year=2008', {asynchronous:true, evalScripts:true, method:'get'}); return false;">jouer</a>
+85<span class="mday">7</span>
+86
+87</td><td class="day" id="day_8"><a class="right play" href="#" onclick="new Ajax.Request('/parties/new?day=8&amp;month=7&amp;year=2008', {asynchronous:true, evalScripts:true, method:'get'}); return false;">jouer</a>
+88<span class="mday">8</span>
+89
+90</td><td class="day" id="day_9"><a class="right play" href="#" onclick="new Ajax.Request('/parties/new?day=9&amp;month=7&amp;year=2008', {asynchronous:true, evalScripts:true, method:'get'}); return false;">jouer</a>
+91<span class="mday">9</span>
+92
+93</td><td class="day" id="day_10"><a class="right play" href="#" onclick="new Ajax.Request('/parties/new?day=10&amp;month=7&amp;year=2008', {asynchronous:true, evalScripts:true, method:'get'}); return false;">jouer</a>
+94<span class="mday">10</span>
+95
+96</td><td class="day" id="day_11"><a class="right play" href="#" onclick="new Ajax.Request('/parties/new?day=11&amp;month=7&amp;year=2008', {asynchronous:true, evalScripts:true, method:'get'}); return false;">jouer</a>
+97<span class="mday">11</span>
+98
+99</td><td class="day weekendDay" id="day_12"><a class="right play" href="#" onclick="new Ajax.Request('/parties/new?day=12&amp;month=7&amp;year=2008', {asynchronous:true, evalScripts:true, method:'get'}); return false;">jouer</a>
+100<span class="mday">12</span>
+101
+102</td><td class="day weekendDay" id="day_13"><a class="right play" href="#" onclick="new Ajax.Request('/parties/new?day=13&amp;month=7&amp;year=2008', {asynchronous:true, evalScripts:true, method:'get'}); return false;">jouer</a>
+103<span class="mday">13</span>
+104
+105</td></tr><tr><td class="day" id="day_14"><a class="right play" href="#" onclick="new Ajax.Request('/parties/new?day=14&amp;month=7&amp;year=2008', {asynchronous:true, evalScripts:true, method:'get'}); return false;">jouer</a>
+106<span class="mday">14</span>
+107
+108</td><td class="day" id="day_15"><a class="right play" href="#" onclick="new Ajax.Request('/parties/new?day=15&amp;month=7&amp;year=2008', {asynchronous:true, evalScripts:true, method:'get'}); return false;">jouer</a>
+109<span class="mday">15</span>
+110
+111</td><td class="day" id="day_16"><a class="right play" href="#" onclick="new Ajax.Request('/parties/new?day=16&amp;month=7&amp;year=2008', {asynchronous:true, evalScripts:true, method:'get'}); return false;">jouer</a>
+112<span class="mday">16</span>
+113
+114</td><td class="day" id="day_17"><a class="right play" href="#" onclick="new Ajax.Request('/parties/new?day=17&amp;month=7&amp;year=2008', {asynchronous:true, evalScripts:true, method:'get'}); return false;">jouer</a>
+115<span class="mday">17</span>
+116
+117</td><td class="day" id="day_18"><a class="right play" href="#" onclick="new Ajax.Request('/parties/new?day=18&amp;month=7&amp;year=2008', {asynchronous:true, evalScripts:true, method:'get'}); return false;">jouer</a>
+118<span class="mday">18</span>
+119
+120</td><td class="day weekendDay" id="day_19"><a class="right play" href="#" onclick="new Ajax.Request('/parties/new?day=19&amp;month=7&amp;year=2008', {asynchronous:true, evalScripts:true, method:'get'}); return false;">jouer</a>
+121<span class="mday">19</span>
+122
+123</td><td class="day weekendDay" id="day_20"><a class="right play" href="#" onclick="new Ajax.Request('/parties/new?day=20&amp;month=7&amp;year=2008', {asynchronous:true, evalScripts:true, method:'get'}); return false;">jouer</a>
+124<span class="mday">20</span>
+125
+126</td></tr><tr><td class="day" id="day_21"><a class="right play" href="#" onclick="new Ajax.Request('/parties/new?day=21&amp;month=7&amp;year=2008', {asynchronous:true, evalScripts:true, method:'get'}); return false;">jouer</a>
+127<span class="mday">21</span>
+128
+129</td><td class="day today" id="day_22"><a class="right play" href="#" onclick="new Ajax.Request('/parties/new?day=22&amp;month=7&amp;year=2008', {asynchronous:true, evalScripts:true, method:'get'}); return false;">jouer</a>
+130<span class="mday">22</span>
+131
+132</td><td class="day" id="day_23"><a class="right play" href="#" onclick="new Ajax.Request('/parties/new?day=23&amp;month=7&amp;year=2008', {asynchronous:true, evalScripts:true, method:'get'}); return false;">jouer</a>
+133<span class="mday">23</span>
+134
+135</td><td class="day" id="day_24"><a class="right play" href="#" onclick="new Ajax.Request('/parties/new?day=24&amp;month=7&amp;year=2008', {asynchronous:true, evalScripts:true, method:'get'}); return false;">jouer</a>
+136<span class="mday">24</span>
+137
+138</td><td class="day" id="day_25"><a class="right play" href="#" onclick="new Ajax.Request('/parties/new?day=25&amp;month=7&amp;year=2008', {asynchronous:true, evalScripts:true, method:'get'}); return false;">jouer</a>
+139<span class="mday">25</span>
+140
+141</td><td class="day weekendDay" id="day_26"><a class="right play" href="#" onclick="new Ajax.Request('/parties/new?day=26&amp;month=7&amp;year=2008', {asynchronous:true, evalScripts:true, method:'get'}); return false;">jouer</a>
+142<span class="mday">26</span>
+143
+144</td><td class="day weekendDay" id="day_27"><a class="right play" href="#" onclick="new Ajax.Request('/parties/new?day=27&amp;month=7&amp;year=2008', {asynchronous:true, evalScripts:true, method:'get'}); return false;">jouer</a>
+145<span class="mday">27</span>
+146
+147</td></tr><tr><td class="day" id="day_28"><a class="right play" href="#" onclick="new Ajax.Request('/parties/new?day=28&amp;month=7&amp;year=2008', {asynchronous:true, evalScripts:true, method:'get'}); return false;">jouer</a>
+148<span class="mday">28</span>
+149
+150</td><td class="day" id="day_29"><a class="right play" href="#" onclick="new Ajax.Request('/parties/new?day=29&amp;month=7&amp;year=2008', {asynchronous:true, evalScripts:true, method:'get'}); return false;">jouer</a>
+151<span class="mday">29</span>
+152
+153</td><td class="day" id="day_30"><a class="right play" href="#" onclick="new Ajax.Request('/parties/new?day=30&amp;month=7&amp;year=2008', {asynchronous:true, evalScripts:true, method:'get'}); return false;">jouer</a>
+154<span class="mday">30</span>
+155
+156</td><td class="day" id="day_31"><a class="right play" href="#" onclick="new Ajax.Request('/parties/new?day=31&amp;month=7&amp;year=2008', {asynchronous:true, evalScripts:true, method:'get'}); return false;">jouer</a>
+157<span class="mday">31</span>
+158
+159</td><td class="otherMonth">1</td><td class="otherMonth weekendDay">2</td><td class="otherMonth weekendDay">3</td></tr></tbody></table>
+160
+161
+162
+163
+164
+165
+166 </div>
+167
+168 <div class="column last span-7" id="innernews">
+169
+170 <div id="placeholder-1">
+171 <div class="widget">
+172 <h3>Statistiques Juillet 2008</h3>
+173 <div class="w-content">
+174
+175 Vous avez jouez en tout 2 parties.
+176 <form action="/parties/resume" method="post">
+177 <ul>
+178 <li class="green"><span class="right">2</span><input checked="checked" id="legend_own" name="legend[own]" type="checkbox" value="1" /><input name="legend[own]" type="hidden" value="0" /> Jeux de votre ludotheque</li>
+179 <li class="orange"><span class="right">0</span><input checked="checked" id="legend_other" name="legend[other]" type="checkbox" value="1" /><input name="legend[other]" type="hidden" value="0" /> Autre jeux</li>
+180 </ul>
+181 </form>
+182
+183 </div>
+184</div>
+185 </div>
+186 <div id="placeholder-2">
+187 </div>
+188 <div id="placeholder-3">
+189 <div class="widget">
+190 <h3>Les jeux du mois</h3>
+191 <div class="w-content">
+192
+193 <table class="sortable">
+194 <tbody>
+195
+196 <tr>
+197 <td><span class="ss_sprite ss_star">&nbsp;</span></span></td>
+198 <td><img alt="9512_0" height="35" src="/game_photos/167/9512_0.jpg?1215245062" width="35" /></td>
+199 <td><a href="/games/303">L'age de pierre</a></td>
+200 <td>1</td>
+201 </tr>
+202
+203 <tr>
+204 <td><span class="ss_sprite ss_star">&nbsp;</span></span></td>
+205 <td><img alt="4834_1" height="35" src="/game_photos/168/4834_1.jpg?1215245208" width="35" /></td>
+206 <td><a href="/games/304">Medici</a></td>
+207 <td>1</td>
+208 </tr>
+209
+210 </tbody>
+211 </table>
+212
+213
+214 </div>
+215</div>
+216 </div>
+217
+218
+219
+220
+221
+222 </div>
+223
+224 <div class="column span-24" id="footer">
+225 <span>Designed by DjT@l</span>
+226 </div>
+227</div> <!-- end main page -->
+228</body>
+229</html>
+230
+Firebug's log limit has been reached. %S entries not shown.		Preferences	 
+Script panel is disabled
+
+Use this page to enable or disable following panels. Enabling these panels will reduce performance and will cause a page reload.
+	Console	Support for Console logging.	disabled
+	Script	Support for JavaScript debugging.	disabled
+	Réseau	Support for Network monitoring.	disabled
+Enable selected panels for Local Files
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head profile="http://gmpg.org/xfn/11">
+</head>
+<body>
+<div id="container">
+<h1>
+</h1>
+<p class="description">Finally a lightweight accordion that is built with scriptaculous and works properly in every browser.</p>
+<div id="vertical_container">
+<h1 class="accordion_toggle">Changelog</h1>
+<div class="accordion_content" style="display: none; font-size: 0px; width: 0px; height: 0px;">
+</div>
+<h1 class="accordion_toggle">Donate! Help me get a MacBook Pro</h1>
+<div class="accordion_content" style="display: none; font-size: 0px; width: 0px; height: 0px;">
+</div>
+<h1 class="accordion_toggle">Why another Accordion?</h1>
+<div class="accordion_content" style="display: none; font-size: 0px; width: 0px; height: 0px;">
+</div>
+<h1 class="accordion_toggle">A Horizontal Accordion! (Nested)</h1>
+<div class="accordion_content" style="display: none; font-size: 0px; width: 0px; height: 0px;">
+</div>
+<h1 class="accordion_toggle">A Vertical Nested Accordion!</h1>
+<div class="accordion_content" style="display: block; font-size: 0px; width: 0px; height: 0px;">
+</div>
+<h1 class="accordion_toggle">Download the code!</h1>
+<div class="accordion_content" style="display: none; font-size: 0px; width: 0px; height: 0px;">
+</div>
+<h1 class="accordion_toggle">How to Use</h1>
+<div class="accordion_content" style="display: none;">
+</div>
+</div>
+<div class="page-footer">
+</div>
+</div>
+</body>
+</html>
+Firebug's log limit has been reached. %S entries not shown.		Preferences	 
+1<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+2<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+3
+4<head profile="http://gmpg.org/xfn/11">
+5
+6 <title>Accordion v2.0 Demo</title>
+7
+8 <!-- Meta Tags -->
+9 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+10 <meta name="keywords" content="accordion, javascript accordion, scriptaculous" />
+11 <meta name="description" content="The ultimate modal window system, LightWindow, allows you to build your own theem, create mixed media galleries including flash, quictkime and images. Through a variety of parameters this system can do it all and recreate any other system out there!" />
+12
+13 <meta name="robots" content="index, follow" />
+14
+15 <!-- JavaScript -->
+16 <script type="text/javascript" src="combine.php?type=javascript&files=prototype.js,effects.js,accordion.js,code_highlighter.js,javascript.js,html.js"></script>
+17
+18 <!-- CSS -->
+19 <link rel="stylesheet" type="text/css" href="css/default.css" />
+20
+21 <script type="text/javascript">
+22
+23 //
+24 // In my case I want to load them onload, this is how you do it!
+25 //
+26 Event.observe(window, 'load', loadAccordions, false);
+27
+28 //
+29 // Set up all accordions
+30 //
+31 function loadAccordions() {
+32 var topAccordion = new accordion('horizontal_container', {
+33 classNames : {
+34 toggle : 'horizontal_accordion_toggle',
+35 toggleActive : 'horizontal_accordion_toggle_active',
+36 content : 'horizontal_accordion_content'
+37 },
+38 defaultSize : {
+39 width : 525
+40 },
+41 direction : 'horizontal'
+42 });
+43
+44 var bottomAccordion = new accordion('vertical_container');
+45
+46 var nestedVerticalAccordion = new accordion('vertical_nested_container', {
+47 classNames : {
+48 toggle : 'vertical_accordion_toggle',
+49 toggleActive : 'vertical_accordion_toggle_active',
+50 content : 'vertical_accordion_content'
+51 }
+52 });
+53
+54 // Open first one
+55 bottomAccordion.activate($$('#vertical_container .accordion_toggle')[0]);
+56
+57 // Open second one
+58 topAccordion.activate($$('#horizontal_container .horizontal_accordion_toggle')[2]);
+59 }
+60
+61 </script>
+62
+63 <!-- CSS -->
+64 <style type="text/css" >
+65
+66 /*
+67 Vertical Accordions
+68 */
+69
+70 .accordion_toggle {
+71 display: block;
+72 height: 30px;
+73 width: 680px;
+74 background: url(images/accordion_toggle.jpg) no-repeat top right #a9d06a;
+75 padding: 0 10px 0 10px;
+76 line-height: 30px;
+77 color: #ffffff;
+78 font-weight: normal;
+79 text-decoration: none;
+80 outline: none;
+81 font-size: 12px;
+82 color: #000000;
+83 border-bottom: 1px solid #cde99f;
+84 cursor: pointer;
+85 margin: 0 0 0 0;
+86 }
+87
+88 .accordion_toggle_active {
+89 background: url(images/accordion_toggle_active.jpg) no-repeat top right #e0542f;
+90 color: #ffffff;
+91 border-bottom: 1px solid #f68263;
+92 }
+93
+94 .accordion_content {
+95 background-color: #ffffff;
+96 color: #444444;
+97 overflow: hidden;
+98 }
+99
+100 .accordion_content h2 {
+101 margin: 15px 0 5px 10px;
+102 color: #0099FF;
+103 }
+104
+105 .accordion_content p {
+106 line-height: 150%;
+107 padding: 5px 10px 15px 10px;
+108 }
+109
+110 .vertical_accordion_toggle {
+111 display: block;
+112 height: 30px;
+113 width: 600px;
+114 background: url(images/accordion_toggle.jpg) no-repeat top right #a9d06a;
+115 padding: 0 10px 0 10px;
+116 line-height: 30px;
+117 color: #ffffff;
+118 font-weight: normal;
+119 text-decoration: none;
+120 outline: none;
+121 font-size: 12px;
+122 color: #000000;
+123 border-bottom: 1px solid #cde99f;
+124 cursor: pointer;
+125 margin: 0 0 0 0;
+126 }
+127
+128 .vertical_accordion_toggle_active {
+129 background: url(images/accordion_toggle_active.jpg) no-repeat top right #e0542f;
+130 color: #ffffff;
+131 border-bottom: 1px solid #f68263;
+132 }
+133
+134 .vertical_accordion_content {
+135 background-color: #ffffff;
+136 color: #444444;
+137 overflow: hidden;
+138 }
+139
+140 .vertical_accordion_content h2 {
+141 margin: 15px 0 5px 10px;
+142 color: #0099FF;
+143 }
+144
+145 .vertical_accordion_content p {
+146 line-height: 150%;
+147 padding: 5px 10px 15px 10px;
+148 }
+149
+150 /*
+151 Horizontal Accordion
+152 */
+153
+154 .horizontal_accordion_toggle {
+155 /* REQUIRED */
+156 float: left; /* This make sure it stays horizontal */
+157 /* REQUIRED */
+158
+159 display: block;
+160 height: 100px;
+161 width: 30px;
+162 background: url(images/h_accordion_toggle.jpg) no-repeat top left #a9d06a;
+163 color: #ffffff;
+164 text-decoration: none;
+165 outline: none;
+166 border-right: 1px solid #cde99f;
+167 cursor: pointer;
+168 margin: 0 0 0 0;
+169 }
+170
+171 .horizontal_accordion_toggle_active {
+172 background: url(images/h_accordion_toggle_active.jpg) no-repeat top left #e0542f;
+173 border-right: 1px solid #f68263;
+174 }
+175
+176 .horizontal_accordion_content {
+177 /* REQUIRED */
+178 height: 100px; /* We need to define a height for the accordion as it stretches the width */
+179 float: left; /* This make sure it stays horizontal */
+180 /* REQUIRED */
+181
+182 overflow: hidden;
+183 background-color: #ffffff;
+184 color: #444444;
+185 }
+186
+187 .horizontal_accordion_content p {
+188 width: 450px;
+189 line-height: 150%;
+190 padding: 5px 10px 15px 10px;
+191 }
+192
+193
+194 /* Container styling*/
+195 #horizontal_container {
+196 margin: 20px auto 20px auto;
+197 width: 680px;
+198 height: 100px;
+199 }
+200
+201 #vertical_nested_container {
+202 margin: 20px auto 20px auto;
+203 width: 620px;
+204 }
+205
+206 </style>
+207
+208
+209</head>
+210
+211<body>
+212
+213
+214
+215<div id="container">
+216
+217 <h1><span>Accordion</span> v2.0</h1>
+218
+219 <p class="description" >Finally a lightweight accordion that is built with scriptaculous and works properly in every browser.</p>
+220
+221 <div id="vertical_container" >
+222
+223 <h1 class="accordion_toggle">Changelog</h1>
+224 <div class="accordion_content">
+225 <h2>What's new in v2.0?</h2>
+226 <p>Well i listened to all you guys out there in my forum and my blog and now all those wishes have been granted!</p>
+227
+228 <ul style="margin: 0 0 20px 30px;">
+229 <li>Open/Close functionality added (Click on an active accordion).</li>
+230 <li>Nested Vertical Accordions</li>
+231 <li>Accordions will dynamically resize on content added REAL TIME!</li>
+232 <li>...lots of bug fixes!</li>
+233 </ul>
+234
+235 </div>
+236
+237 <h1 class="accordion_toggle">Donate! Help me get a MacBook Pro</h1>
+238 <div class="accordion_content">
+239
+240 <img src="images/macbook.png" align="left" style="padding: 10px 10px 0 10px;" />
+241
+242 <h2>Help me get a MacBook Pro!</h2>
+243 <p>
+244 Hello everyone, I have now released my accordion script and its better than any other one out there! That's right I said it. I will be releasing a few more of my scripts in the weeks to come. In the meantime though help me get a MacBook Pro so I have a mac to test on! Anything you could throw my way would be appreciated, I will also give back in my <a href="http://forum.stickmanlabs.com">forums</a>, so no worries, I give back even more!
+245 </p>
+246
+247 <p>&nbsp;</p>
+248
+249 <div align="center" style="width: 50%; float: left;" >
+250 <strong>$5 donation</strong>
+251 <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+252 <input type="hidden" name="cmd" value="_s-xclick">
+253 <input type="image" src="https://www.paypal.com/en_US/i/btn/x-click-but21.gif" border="0" name="submit" alt="Make payments with PayPal - it's fast, free and secure!">
+254 <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+255 <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+256 ">
+257 </form>
+258 </div>
+259
+260 <div align="center" style="width: 50%; float: left;" >
+261 <strong>Specify your own donation</strong>
+262 <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+263 <input type="hidden" name="cmd" value="_s-xclick">
+264 <input type="image" src="https://www.paypal.com/en_US/i/btn/x-click-but21.gif" border="0" name="submit" alt="Make payments with PayPal - it's fast, free and secure!">
+265 <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+266 <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+267 ">
+268 </form>
+269 </div>
+270
+271 <p>&nbsp;</p>
+272 </div>
+273
+274 <h1 class="accordion_toggle">Why another Accordion?</h1>
+275 <div class="accordion_content">
+276 <h2>Uhm... There wasn't one, well not a good one.</h2>
+277 <p>
+278 Haha! Like there was one. Well there was, but only for <a href="http://openrico.org/demos?demo=accordion" >Rico</a> and a bloated one by <a href="http://moofx.mad4milk.net/">mootools</a>, that's right I said bloated, live with it. For some reason there wasn't one for <a href="http://script.aculo.us/">scriptaculous</a> but now there is. The why is pretty simple, just like every other library, I had a need for it. Hope you can get some use out of it.
+279 </p>
+280
+281 <p>
+282 Oh, by the way, not only does this script handle <strong>vertical</strong> accordions, but <strong>horizontal</strong> as well!
+283 </p>
+284 </div>
+285
+286 <h1 class="accordion_toggle">A Horizontal Accordion! (Nested)</h1>
+287 <div class="accordion_content">
+288
+289 <h2>Oh yeah, just a few options... BAM Horizontal!</h2>
+290
+291 <div id="horizontal_container" >
+292
+293 <h3 class="horizontal_accordion_toggle"></h3>
+294 <div class="horizontal_accordion_content">
+295 <p>
+296 Integer commodo nibh sit amet odio. Pellentesque semper. Integer dolor. Donec scelerisque sapien placerat velit.
+297 </p>
+298 </div>
+299
+300 <h3 class="horizontal_accordion_toggle"></h3>
+301 <div class="horizontal_accordion_content">
+302 <p>
+303 Sed at pede vitae turpis porta condimentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla facilisi. Morbi erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+304 </p>
+305 </div>
+306
+307 <h3 class="horizontal_accordion_toggle"></h3>
+308 <div class="horizontal_accordion_content">
+309 <p>
+310 Curabitur quam lorem, laoreet molestie, eleifend id, pulvinar vel, nunc. Proin congue felis quis purus. Aenean porttitor, lacus vel bibendum pulvinar, leo nulla suscipit leo, nec lobortis orci diam eget turpis. Sed eu eros et orci consectetuer molestie. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+311 </p>
+312 </div>
+313
+314 <h3 class="horizontal_accordion_toggle"></h3>
+315 <div class="horizontal_accordion_content">
+316 <p>
+317 Sed at pede vitae turpis porta condimentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla facilisi. Morbi erat.
+318 </p>
+319 </div>
+320
+321 <h3 class="horizontal_accordion_toggle"></h3>
+322 <div class="horizontal_accordion_content">
+323 <p>
+324 Integer commodo nibh sit amet odio. Pellentesque semper. Integer dolor. Donec scelerisque sapien placerat velit. Nulla suscipit, elit quis pretium hendrerit, nisi sapien lobortis libero, et consectetuer lorem sapien id urna.
+325 </p>
+326 </div>
+327
+328 </div>
+329
+330 </div>
+331
+332 <h1 class="accordion_toggle">A Vertical Nested Accordion!</h1>
+333 <div class="accordion_content">
+334
+335 <div id="vertical_nested_container" >
+336
+337 <h3 class="vertical_accordion_toggle">Hablo pig-latin?</h3>
+338 <div class="vertical_accordion_content">
+339 <p>
+340 Integer commodo nibh sit amet odio. Pellentesque semper. Integer dolor. Donec scelerisque sapien placerat velit.
+341 </p>
+342 </div>
+343
+344 <h3 class="vertical_accordion_toggle">Isn't this kewl?'</h3>
+345 <div class="vertical_accordion_content">
+346 <p>
+347 Sed at pede vitae turpis porta condimentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla facilisi. Morbi erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+348 </p>
+349 </div>
+350
+351 <h3 class="vertical_accordion_toggle">Click me!</h3>
+352 <div class="vertical_accordion_content">
+353 <p>
+354 Curabitur quam lorem, laoreet molestie, eleifend id, pulvinar vel, nunc. Proin congue felis quis purus. Aenean porttitor, lacus vel bibendum pulvinar, leo nulla suscipit leo, nec lobortis orci diam eget turpis. Sed eu eros et orci consectetuer molestie. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+355 </p>
+356 </div>
+357
+358 <h3 class="vertical_accordion_toggle">Don't you dare....'</h3>
+359 <div class="vertical_accordion_content">
+360 <p>
+361 Sed at pede vitae turpis porta condimentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla facilisi. Morbi erat.
+362 </p>
+363 </div>
+364
+365 <h3 class="vertical_accordion_toggle">Your Mom!</h3>
+366 <div class="vertical_accordion_content">
+367 <p>
+368 Integer commodo nibh sit amet odio. Pellentesque semper. Integer dolor. Donec scelerisque sapien placerat velit. Nulla suscipit, elit quis pretium hendrerit, nisi sapien lobortis libero, et consectetuer lorem sapien id urna.
+369 </p>
+370 </div>
+371
+372 </div>
+373
+374 </div>
+375
+376
+377 <h1 class="accordion_toggle">Download the code!</h1>
+378 <div class="accordion_content">
+379 <h2>Download</h2>
+380 <p>
+381 Get it here <a href="accordion.zip">Accordion v2.0</a>
+382 </p>
+383
+384 <p>Oh and... help me with a MacBook Pro?</p>
+385
+386 <div align="center" style="width: 50%; float: left;" >
+387 <strong>$5 donation</strong>
+388 <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+389 <input type="hidden" name="cmd" value="_s-xclick">
+390 <input type="image" src="https://www.paypal.com/en_US/i/btn/x-click-but21.gif" border="0" name="submit" alt="Make payments with PayPal - it's fast, free and secure!">
+391 <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+392 <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+393 ">
+394 </form>
+395 </div>
+396
+397 <div align="center" style="width: 50%; float: left;" >
+398 <strong>Specify your own donation</strong>
+399 <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+400 <input type="hidden" name="cmd" value="_s-xclick">
+401 <input type="image" src="https://www.paypal.com/en_US/i/btn/x-click-but21.gif" border="0" name="submit" alt="Make payments with PayPal - it's fast, free and secure!">
+402 <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+403 <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+404 ">
+405 </form>
+406 </div>
+407 </div>
+408
+409 <h1 class="accordion_toggle">How to Use</h1>
+410 <div class="accordion_content">
+411
+412 <h2>Include the files</h2>
+413 <p>
+414 You need to include accordion.js but it requires prototype.js and effects.js (like I said this is for scriptaculous!). As long as you are using at least the latest stable builds you are fine.
+415<pre><code class="html">&lt;script type="text/javascript" src="javascript/prototype.js"&gt;&lt;/script&gt;
+416&lt;script type="text/javascript" src="javascript/effects.js"&gt;&lt;/script&gt;
+417&lt;script type="text/javascript" src="javascript/accordion.js"&gt;&lt;/script&gt;</code></pre>
+418 <h2>The Markup</h2>
+419 <p>
+420 Pretty much anything will work, so its really up to you. The presentation is up to you (see the source of this page for some examples). Ideally you should probably use header tags with div's containing the content as this would be best symantically speaking and for seo. Below is a basic example.
+421 </p>
+422 <pre><code class="html">&lt;h2 class="accordion_toggle"&gt;Title Bar&lt;/h2&gt;
+423&lt;div class="accordion_content"&gt;...&lt;/div&gt;
+424...
+425...
+426...
+427&lt;h2 class="accordion_toggle"&gt;Title Bar&lt;/h2&gt;
+428&lt;div class="accordion_content"&gt;...&lt;/div&gt;</code></pre>
+429 <p>
+430 The important thing here is that it need to be the title element then the content element and so on, nothing in between, just like every other accordion.
+431 </p>
+432
+433 <h2>The Options</h2>
+434 <p>
+435 Not many options, but all you need to make this thing do anything you may require!
+436 </p>
+437 <pre><code class="javascript">// The speed of the accordion
+438resizeSpeed : 8,
+439// The classnames to look for
+440classNames : {
+441 // The standard class for the title bar
+442 toggle : 'accordion_toggle',
+443 // The class used for the active state of the title bar
+444 toggleActive : 'accordion_toggle_active',
+445 // The class used to find the content
+446 content : 'accordion_content'
+447},
+448// If you don't want the accordion to stretch to fit
+449// its content, set a value here, handy for horixontal examples.
+450defaultSize : {
+451 height : null,
+452 width : null
+453},
+454// The direction of the accordion
+455direction : 'vertical',
+456// Should the accordion activate on click or say on mouseover? (apple.com)
+457onEvent : 'click'</code></pre>
+458
+459 <p>
+460 Now these are the default options set automatically, so let's now take a look on how to create an accordion and change those options.
+461 </p>
+462
+463 <h2>The Javascript</h2>
+464
+465 <p>
+466 Below is how I created the two accordions you see on this page, one vertical, one horizontal with a specified width.
+467 </p>
+468
+469 <pre><code class="javascript">// General Syntax
+470new accordion('container-selector', options);
+471
+472// Horizontal example
+473var horizontalAccordion = new accordion('#top_container', {
+474 classNames : {
+475 toggle : 'horizontal_accordion_toggle',
+476 toggleActive : 'horizontal_accordion_toggle_active',
+477 content : 'horizontal_accordion_content'
+478 },
+479 defaultSize : {
+480 width : 525
+481 },
+482 direction : 'horizontal'
+483});
+484
+485// Vertical Accordion
+486var verticalAccordion = new accordion('#bottom_container');</code></pre>
+487
+488 <p>
+489 Ok, so now we know how to do the markup, hopefully you got creative with the css and looked at the source of this page to get started, and not you know how make an accordion. What if you want to use javascript to open a slide on load or at any time... here is how.
+490 </p>
+491 <pre><code class="javascript">// Let's create it
+492var verticalAccordion = new accordion('#bottom_container');
+493
+494// Now lets open the first slide
+495verticalAccordion.activate($$('#bottom_container .accordion_toggle')[0]);
+496</code></pre>
+497
+498 <p>
+499 So we use the selector method from prototype to get the first title bar from the container+classname and we want the first one so we use [0]. Couldn't be easier!
+500 </p>
+501 <h2>Preload</h2>
+502 <p>So let's say you want all your accordions closed on page load but don't want the nasty flash and don't want to sacrifice accessibility. </p>
+503 <pre><code class="javascript">// Special thanks go out to Will Shaver @ http://primedigit.com/
+504var verticalAccordions = $$('.accordion_toggle');
+505verticalAccordions.each(function(accordion) {
+506 $(accordion.next(0)).setStyle({
+507 height: '0px'
+508 });
+509});
+510</code></pre>
+511
+512 </div>
+513
+514
+515 </div>
+516
+517 <div class="page-footer">
+518 <p>&copy; Copyright 2007 <a href="http://www.stickmanlabs.com"><small>stickmanlabs</small></a></p>
+519 <p>Accordion is freely distributable under the terms of an MIT-style license.</p>
+520
+521 </div>
+522
+523</div>
+524
+525<script type="text/javascript" >
+526
+527 //
+528 // You can hide the accordions on page load like this, it maintains accessibility
+529 //
+530 // Special thanks go out to Will Shaver @ http://primedigit.com/
+531 //
+532 var verticalAccordions = $$('.accordion_toggle');
+533 verticalAccordions.each(function(accordion) {
+534 $(accordion.next(0)).setStyle({
+535 height: '0px'
+536 });
+537 });
+538
+539
+540</script>
+541
+542<script type="text/javascript" src="http://www.google-analytics.com/urchin.js"></script>
+543<script type="text/javascript">_uacct = "UA-624845-2";urchinTracker();</script>
+544
+545
+546</body>
+547</html>
+548
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head profile="http://gmpg.org/xfn/11">
+</head>
+<body>
+<div id="container">
+<h1>
+</h1>
+<p class="description">Finally a lightweight accordion that is built with scriptaculous and works properly in every browser.</p>
+<div id="vertical_container">
+</div>
+<div class="page-footer">
+</div>
+</div>
+<script type="text/javascript">
+</script>
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+</script>
+</body>
+</html>
+*, html, body {
+margin:0pt;
+padding:0pt;
+}
+html {
+height:100%;
+}
+body {
+background:#171B20 none repeat scroll 0% 0%;
+color:#FFFFFF;
+font-family:'Lucida Grande',Verdana,Arial;
+font-size:12px;
+height:100%;
+}
+h1 {
+color:#96BF55;
+font-size:20px;
+font-weight:normal;
+margin:5px 0pt;
+text-align:left;
+}
+h1 span {
+color:#FFFFFF;
+font-size:20px;
+font-weight:normal;
+margin:5px 5px 5px 0pt;
+text-align:left;
+}
+.description {
+color:#FFFFBE;
+font-size:12px;
+line-height:18px;
+padding:5px 0pt 15px;
+}
+#container {
+margin:20px auto 0pt;
+width:700px;
+}
+#top_container {
+height:130px;
+margin:10px auto;
+width:680px;
+}
+#bottom_container {
+clear:both;
+width:700px;
+}
+.page-top {
+background-color:#0099FF;
+border-bottom:5px solid #444444;
+height:10px;
+left:0pt;
+position:fixed;
+top:0pt;
+width:100%;
+}
+.page-sidebar {
+left:20px;
+position:fixed;
+top:30px;
+width:250px;
+}
+* html .page-sidebar {
+left:20px;
+position:absolute;
+top:30px;
+width:250px;
+}
+.page-title {
+margin:0pt;
+padding:0pt 0pt 10px;
+text-align:left;
+}
+.page-title h1 {
+margin:0pt 0pt 5px;
+}
+.page-title h2 {
+clear:both;
+color:#FFFF99;
+font-size:100%;
+font-weight:normal;
+margin:0pt;
+}
+.page-body {
+margin:0pt 10% 0pt 315px;
+padding:30px 0pt 20px;
+text-align:left;
+width:600px;
+}
+.page-footer {
+font-size:10px;
+margin:20px 0pt 0pt;
+text-align:left;
+}
+.page-body ul, .page-body ol {
+color:#FFFFFF;
+margin:10px 0pt 30px 25px;
+}
+.page-body ul li, .page-body ol li {
+color:#CCCCCC;
+font-size:100%;
+line-height:140%;
+margin:0pt 0pt 5px;
+padding:0pt;
+}
+.page-footer p {
+margin:0pt;
+}
+.page-title h1 span {
+color:#FFFFFF;
+font-size:100%;
+font-weight:normal;
+margin:5px 0pt 15px;
+text-align:left;
+}
+a, a:link, a:visited {
+color:#0099FF;
+}
+h2 {
+color:#0099FF;
+font-size:150%;
+font-weight:normal;
+margin:5px 0pt 15px;
+text-align:left;
+}
+h2 span {
+clear:both;
+color:#FFFF99;
+font-size:70%;
+}
+.notice {
+background-color:#0099FF;
+border:3px solid #FFFFBE;
+color:#FFFFFF;
+margin:0pt 0pt 20px;
+padding:10px;
+}
+.notice p, .notice p a, li a {
+color:#FFFFFF;
+text-decoration:none;
+}
+.navigation {
+list-style-image:none;
+list-style-position:outside;
+list-style-type:none;
+margin:10px 0pt 30px;
+width:200px;
+}
+.navigation li {
+margin:0pt;
+padding:0pt;
+}
+.navigation a, .navigation a:visited {
+background-color:#333333;
+border-bottom:3px solid #171B20;
+color:#FFFFFF;
+display:block;
+height:25px;
+line-height:25px;
+padding:0pt 10px;
+text-decoration:none;
+}
+.navigation a:hover {
+background-color:#A9D06A;
+color:#000000;
+}
+a.page-options {
+background:#A9D06A none repeat scroll 0% 0%;
+border-bottom:1px solid #555555;
+color:#000000;
+display:block;
+margin:3px 0pt 0pt;
+padding:5px;
+text-align:left;
+text-decoration:none;
+}
+a.page-options:hover, a.page-options:focus {
+background:#0099FF none repeat scroll 0% 0%;
+color:#FFFFFF;
+}
+p small, li small {
+color:#0099FF;
+font-size:100%;
+}
+p em, em {
+color:#FFFFFF;
+}
+.hidden {
+display:none;
+}
+pre {
+background:#000000 none repeat scroll 0% 0%;
+font-size:11px;
+margin:10px 0pt;
+overflow:auto;
+padding:10px;
+}
+code {
+background:#000000 none repeat scroll 0% 0%;
+color:#FFFFFF;
+font-family:Monaco,Courier,monotype;
+}
+code span.comment {
+color:#BD48B3;
+}
+code span.string {
+color:#99FF00;
+}
+code span.brackets {
+}
+code span.symbol {
+color:#6BCFF7;
+}
+code span.keywords {
+color:#FF8400;
+}
+code span.erb {
+background:#333333 none repeat scroll 0% 0%;
+}
+code span.symbol {
+color:#07DFFC;
+}
+code.html span.tag {
+color:#FFFFFF;
+}
+code.html span.attribute {
+color:#FFD500;
+}
+code.html span.string {
+color:#99FF00;
+}
+code.html span.comment {
+color:#999999;
+}
+code.html span.doctype {
+color:#D7FF80;
+}

@@ -55,7 +55,7 @@ var Accordion = Class.create({
 		this.accordions.each(function(accordion) {
 			accordion.observe(this.options.onEvent, this.activate.bindAsEventListener(this, accordion));
 			accordion.identify();			
-			this.heights.set(accordion.id, accordion.next(0).scrollHeight)
+			this.heights.set(accordion.id, accordion.next(0).getDimensions().height)
 			accordion.next(0).hide();
 			
 		}.bind(this));
@@ -88,9 +88,9 @@ var Accordion = Class.create({
 	                                      beforeStart: function(){this.current.next(0).show();}.bind(this),
     	                                  scaleX: false,
     	                                  scaleFrom: 0,
-    	                                  scaleMode:{originalHeight: this.heights.get(this.current.id),
+    	                                  scaleMode:{originalHeight: this.heights.get(this.current.id)},
     	                                  transition: Effect.Transitions.sinoidal,
-    	                                  duration: this.duration}}));
+    	                                  duration: this.duration}));
 	  }
 	  this.startEffect(effects);
 	},

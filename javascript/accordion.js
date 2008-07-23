@@ -65,37 +65,38 @@ var Accordion = Class.create({
 	},
 	
 	activate: function(ev, accordion){
-	    ev.stop();
-	    this.previous = this.current;
-	    this.current = accordion;
-	    this.handleEffect();
+	  ev.stop();
+	  this.previous = this.current;
+	  this.current = accordion;
+	  this.handleEffect();
 	},
 	
 	handleEffect: function(){
-	    effects = $A();
-	    if (this.previous){ //scale previous down  
+	  [this.previous, this.current].compact().invoke("toggleClassName", this.options.classNames.toggleActive)
+	  effects = $A();
+	  if (this.previous){ //scale previous down  
 	      effects.push(new Effect.Scale(this.previous.next(0), 0, {sync: true, scaleContent: false, 
 	                                      afterFinish: function(){this.previous.next(0).hide();}.bind(this),
     	                                  scaleX: false,
     	                                  transition: Effect.Transitions.sinoidal,
     	                                  duration: this.duration}));
 	      
-	    }
+	  }
 	    
-	    if (this.current){ //scale current up now
+	  if (this.current){ //scale current up now
 	      effects.push(new Effect.Scale(this.current.next(0), 100, {sync: true, scaleContent: false, 
-	                                      afterFinish: function(){this.current.next(0).show();}.bind(this),
+	                                      beforeStart: function(){this.current.next(0).show();}.bind(this),
     	                                  scaleX: false,
     	                                  scaleFrom: 0,
     	                                  scaleMode:{originalHeight: this.heights.get(this.current.id),
     	                                  transition: Effect.Transitions.sinoidal,
     	                                  duration: this.duration}}));
-	    }
-	    this.startEffect(effects);
+	  }
+	  this.startEffect(effects);
 	},
 	
 	startEffect: function(effects){
-  	  new Effect.Parallel(effects, {duration: this.duration});
+  	new Effect.Parallel(effects, {duration: this.duration});
 	},
 });
 	

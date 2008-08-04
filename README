@@ -1,0 +1,32 @@
+Accordion widget for prototype and script.aculo.us
+
+
+Based on work done by Kevin P Miller | http://www.stickmanlabs.com
+
+This version is a rewrite for latest version of both lib.
+
+= Requirements
+  * prototype 1.6.0.2
+  * scriptaculous effect.js 1.8.1
+  
+= Usage
+
+The HTML
+
+<div id="vertical_container" >
+
+ 	<h1 class="accordion_toggle">Changelog</h1>
+	<div class="accordion_content">   
+    //your content here
+  </div>
+</div>
+
+The JS
+
+  bottomAccordion = new Accordion('vertical_container');	
+  
+  
+= Know bugs
+  * element height error when conatinbns lot of image. all image are not loaded on dom:loaded event.
+
+
